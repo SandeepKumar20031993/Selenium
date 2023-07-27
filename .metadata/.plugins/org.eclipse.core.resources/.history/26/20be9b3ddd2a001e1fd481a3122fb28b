@@ -1,0 +1,23 @@
+package gallaautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class gallalogin {
+	public static WebDriver driver;
+
+	@Test
+	public void check_SS() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://retail.galla.app/mystore/index.php");
+		WebElement logo = driver.findElement(By.cssSelector("input csrf_fete_v1"));
+	}
+
+}

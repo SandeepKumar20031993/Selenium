@@ -1,0 +1,11 @@
+package gallaautomation;
+
+public class gallalogin {
+	public static WebDriver driver;
+
+	@Test
+	public void checkSS() {
+		WebDriverManager.chromedriver().setup();
+	}
+
+}

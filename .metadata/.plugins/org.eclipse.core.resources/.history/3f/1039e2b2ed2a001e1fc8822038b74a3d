@@ -1,0 +1,30 @@
+package gallaautomation;
+
+import javax.xml.xpath.XPath;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class testings {
+	public static WebDriver driver;
+
+	@Test
+	public static void newtab() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.name("q")).sendKeys("Selenium WebDriver");
+        driver.findElement(By.name("btnK")).click();
+
+        driver.get("https://www.facebook.com");
+	}
+
+	
+
+}

@@ -1,0 +1,16 @@
+package gallaautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class gallalogin {
+	public static WebDriver driver;
+
+	@Test
+	public void checkSS() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().minimize();
+	}
+
+}

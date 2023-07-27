@@ -1,0 +1,30 @@
+package gallaautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testings {
+	public static void newtab() {
+		WebDriver driver = new ChromeDriver();
+
+	    // Open Google in the same tab
+	    driver.get("https://www.google.com");
+
+	    // Perform actions on the Google page
+	    driver.findElement(By.name("q")).sendKeys("Selenium WebDriver");
+	    driver.findElement(By.name("btnK")).click();
+
+	    // Open Facebook in the same tab
+	    driver.get("https://www.facebook.com");
+
+	    // Perform actions on the Facebook page
+	    driver.findElement(By.id("email")).sendKeys("your_email");
+	    driver.findElement(By.id("pass")).sendKeys("your_password");
+	    driver.findElement(By.name("login")).click();
+	}
+
+
+	
+
+}

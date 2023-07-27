@@ -1,0 +1,22 @@
+package gallaautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Gallmainlogin {
+	public static WebDriver driver;
+
+	@Test
+	public static void newtab() {
+		WebDriverManager.chromedriver().setup();
+
+		driver.manage().window().maximize();
+		driver = new ChromeDriver();
+		driver.get("https://retail.galla.app/mystore/index.php");
+		driver.switchTo().newWindow("https://retail.galla.app/mystore/index.php/home");
+	}
+
+}

@@ -1,0 +1,46 @@
+package gallaautomation;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Gallmainlogin {
+	public static WebDriver driver;
+
+	@Test
+	public static void newtab() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get("https://www.google.com/");
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.navigate().to("https://retail.galla.app/mystore/index.php");
+		driver.findElement(By.id("username")).sendKeys("kumaradmin");
+		driver.findElement(By.id("password")).sendKeys("pointofsale");
+		driver.findElement(By.id("storecode")).sendKeys("2h337h00ch");
+		driver.findElement(By.className("btn")).click();
+		driver.navigate().to("https://retail.galla.app/mystore/index.php/items");
+		driver.navigate().to("https://retail.galla.app/mystore/index.php/reports/index/reports_items");
+//		WebElement siblingElement = driver.findElement(By.xpath("//div[@i='daterangepicker']"));
+		driver.findElement(By.id("generate")).click();
+		
+		
+
+	}
+//
+//	@Test(priority = 1)
+//
+//	public void letestsale() {
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.switchTo().newWindow(WindowType.TAB);
+//		driver.findElement(By.className("btn")).click();
+//		driver.navigate().to("https://retail.galla.app/mystore/index.php/reports/index/reports_items");
+//	}
+
+}

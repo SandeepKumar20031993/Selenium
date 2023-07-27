@@ -1,0 +1,29 @@
+package gallaautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Gallmainlogin {
+	public static WebDriver driver;
+
+	@Test
+	public static void newtab() {
+		WebDriverManager.chromedriver().setup();
+
+		driver.manage().window().maximize();
+		driver = new ChromeDriver();
+		driver.get("https://www.google.com");
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		driver.navigate().to("https://retail.galla.app/mystore/index.php");
+		driver.findElement(By.id("username")).sendKeys("kumaradmin");
+		driver.findElement(By.id("password")).sendKeys("pointofsale");
+		driver.findElement(By.id("storecode")).sendKeys("2h337h00ch");
+		
+	}
+
+}
